@@ -14,9 +14,7 @@ function Home() {
             <h5 className="card-title">
                 <Link to="/Beers">All Beers</Link>    
             </h5>
-               
-              
-              <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
           </div>
         </div>
@@ -24,7 +22,9 @@ function Home() {
           <div className="card h-100">
             <img src={randombeer} className="card-img-top" alt="..."/>
             <div className="card-body">
-              <h5 className="card-title">Random Beer</h5>
+              <h5 className="card-title">
+                <Link to="/random-beer">Random Beer</Link> 
+              </h5>
               <p className="card-text">This is a short card.</p>
             </div>
           </div>
