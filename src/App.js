@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/beers" element={<AllBeers />} />
-        <Route path="/beers/:id" element={<Beer />} />
+        <Route path="/beers/:beerId" element={<Beer />} />
         {/* <Route path="/Beer/new" element={<NewBeer />} />
         
         <Route path="/Beer/randomBeer" element={<RandomBeer />} />  */}
