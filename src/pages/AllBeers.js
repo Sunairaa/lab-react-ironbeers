@@ -25,7 +25,7 @@ function AllBeers() {
         {beers.map((beer) => {
             return(
                 <div className="col" key={beer._id}>
-                    <div className="card mb-3 p-2" style={{maxWidth: '540px'}}>
+                    <div className="card mb-3 p-2 h-100" style={{maxWidth: '540px'}}>
                         <div className="row g-0">
                             <div className="col-md-4">
                             <img src={beer.image_url} className="img-fluid rounded-start" alt="..." style={{objectFit: 'scale-down', width: '150px', height: '150px'}}/>
