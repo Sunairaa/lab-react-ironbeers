@@ -7,6 +7,7 @@ const apiURL = 'https://ih-beers-api2.herokuapp.com/beers';
 
 function AllBeers() {
     const [beers, setBeers] = useState([]);
+    const [query, setQuery] = useState("");
 
     useEffect(() => {
         axios.get(apiURL)
@@ -17,14 +18,25 @@ function AllBeers() {
         .catch((err) => console.log(err));
     }, [])
 
+    // iteration 7 - search for beers
+    const handleSearchQuery = (e) => {
+        setQuery(e.target.value)
+        axios.get(`${apiURL}/search?q=${query}`)
+            .then(response => {
+                console.log(response.data)
+                setBeers(response.data)
+            })
+    }
+
   return (
 
     <div>  
         <Header />
+        <input type="text" placeholder='search' value={query} onChange={handleSearchQuery}></input>
         <div className="row row-cols-1 row-cols-md-3 g-4 m-3">
         {beers.map((beer) => {
             return(
-                <div className="col" key={beer._id}>
+                    <div className="col" key={beer._id}>
                     <div className="card mb-3 p-2 h-100" style={{maxWidth: '540px'}}>
                         <div className="row g-0">
                             <div className="col-md-4">
@@ -42,6 +54,7 @@ function AllBeers() {
                         </div>
                     </div>
                 </div>
+                
             )
         })}
         </div>
